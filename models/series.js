@@ -1,0 +1,1 @@
+//Series model (for watch history, ratings, reviews, etc.)

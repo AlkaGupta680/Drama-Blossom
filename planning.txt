@@ -1,0 +1,74 @@
+Project: Drama Blossom
+
+Models:
+1. User Model
+   - Fields: 
+     - username (String, required, unique)
+     - email (String, required, unique, lowercase)
+     - password (String, required)
+     - profilePicture (String, default: 'default-profile-pic.png')
+     - createdAt (Date, default: Date.now)
+
+Routes:
+1. User Routes
+   - POST /signup: User sign-up
+   - POST /signin: User sign-in
+   - POST /login: User login using email and password
+   - GET /profile: Get user profile information (requires authentication)
+   - PUT /profile: Update user profile information (requires authentication)
+ 
+
+----------------------------------------------------------------------------------------------
+Functionalities:
+1. User sign up
+2. User sign in
+3. User login using email and password
+4. View user profile
+   - Users can view their profile information (username, email, profile picture).
+5. Update user profile
+   - Users can update their username, email, and profile picture.
+6. Password reset
+   - Users can request a password reset link via email.
+   - Users can set a new password after verifying their identity.
+7. View watch history
+   - Users can view a list of series they have watched.
+8. Create watchlist
+   - Users can add series to a personal watchlist for future viewing.
+9. Rate series
+   - Users can rate series they have watched (e.g., 1 to 5 stars).
+10. Leave reviews
+    - Users can write reviews for series they have watched.
+11. Search for series
+    - Users can search for series by title or genre.
+12. View recommended series
+    - Users can see a list of recommended series based on their viewing history and preferences.
+
+    ----------------------------------------------------------------------------
+
+    DramaBlossom/
+│
+├── models/
+│   ├── user.js               # User model
+│   ├── series.js             # Series model (for watch history, ratings, reviews, etc.)
+│
+├── routes/
+│   ├── userRoutes.js         # User routes
+│   ├── seriesRoutes.js       # Series routes (for watch history, ratings, reviews, etc.)
+│
+├── controllers/
+│   ├── userController.js      # User-related logic (signup, signin, profile  management, etc.)
+
+│   ├── seriesController.js    # Series-related logic (watch history, ratings, reviews, etc.)
+│
+├── middlewares/
+│   ├── authMiddleware.js      # Middleware for authentication
+│
+├── utils/
+│   ├── emailService.js        # Utility for sending emails (for password reset)
+│
+├── config/
+│   ├── db.js                  # Database connection
+│   ├── jwt.js                 # JWT configuration
+│
+├── app.js                     # Main application file
+└── package.json               # Project dependencies
